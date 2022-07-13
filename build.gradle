@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.9'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.tt'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	/*
+	Escopos do Gradle:
+	- implementation: em testes, em compilação e em execução - será empacotado para produção
+	- testImplementation: somente em testes - não será empacotado para produção
+	- runtimeOnly: somente para execução - típico para drivers de banco - irá para produção
+	- compileOnly: somente para compilação - típico de pré-processadores de compilação (lombok) - não vai pra produção
+
+	Escope do Maven:
+	- runtime <-> runtimeOnly
+	- test <-> testImplementation
+	- provided  <-> compileOnly - provido no servidor
+	- system (jar fora do maven)
+	 */
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
