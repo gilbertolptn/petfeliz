@@ -26,4 +26,9 @@ public class InformacoesController {
         return informacoesService.listarEnderecos();
     }
 
+    @RequestMapping("/horarios")
+    public List<String> listarHorarios(){
+        return informacoesService.listarHorarios();
+    }
+
 }

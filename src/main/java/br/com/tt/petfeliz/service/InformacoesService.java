@@ -21,4 +21,8 @@ public class InformacoesService {
     public List<String> listarEnderecos() {
        return informacoesRepository.listarEnderecos();
     }
+
+    public List<String> listarHorarios() {
+        return informacoesRepository.listarHorarios();
+    }
 }
