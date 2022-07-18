@@ -25,4 +25,8 @@ public class InformacoesService {
     public List<String> listarHorarios() {
         return informacoesRepository.listarHorarios();
     }
+
+    public void cadastrarTelefone(String numero) {
+        informacoesRepository.cadastrarTelefone(numero);
+    }
 }

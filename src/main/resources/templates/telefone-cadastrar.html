@@ -11,8 +11,8 @@
 
     <a href="/admin">Voltar</a><br><br><br>
 
-    <form>
-        <input type="text" name="telefone" id="telefone"/>
+    <form method="post" th:action="@{/admin/action/tefonone-cadastrar}">
+        <input type="text" name="numero" id="numero"/>
         <input type="submit" value="Cadastrar telefone">
     </form>
 
