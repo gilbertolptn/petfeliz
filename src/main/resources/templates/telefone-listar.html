@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Listagem de Telefones</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Pet Feliz</h1>
+<h2>Administração do Sistema</h2>
+<h3>Listagem de telefones</h3>
+
+<a href="/admin">Voltar</a><br><br><br>
+
+<ul th:each="telefone: ${telefones}">
+  <li th:text="${telefone}"></li>
+</ul>
+
+</body>
+</html>

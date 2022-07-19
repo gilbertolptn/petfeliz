@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller //Não com REST, mas com Páginas HTML
 @RequestMapping("/admin")
 public class AdministracaoWebController {
@@ -39,6 +41,14 @@ public class AdministracaoWebController {
 //    public void actionTelefoneCadastrar(@RequestParam Map atributos){
 //        System.out.println(atributos);
 //    }
+
+    @GetMapping("/telefone-listar")
+    public String getPaginaTelefoneListar(Model page){
+        List<String> telefones = informacoesService.listarTelefones();
+        page.addAttribute("telefones", telefones);
+
+        return "telefone-listar";
+    }
 
 
 }
