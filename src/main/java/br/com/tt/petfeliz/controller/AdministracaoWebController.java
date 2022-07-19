@@ -29,7 +29,7 @@ public class AdministracaoWebController {
         return "telefone-cadastrar";
     }
 
-    @PostMapping("/action/tefonone-cadastrar")
+    @PostMapping("/action/telefone-cadastrar")
     public String actionTelefoneCadastrar(TelefoneCriacaoRequest telefone){
         informacoesService.cadastrarTelefone(telefone.getNumero());
         return "redirect:/admin/telefone-cadastrar";

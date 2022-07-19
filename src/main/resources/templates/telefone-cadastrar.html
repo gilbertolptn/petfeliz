@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Telefone</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
     <h1>Pet Feliz</h1>
@@ -11,9 +14,9 @@
 
     <a href="/admin">Voltar</a><br><br><br>
 
-    <form method="post" th:action="@{/admin/action/tefonone-cadastrar}">
-        <input type="text" name="numero" id="numero"/>
-        <input type="submit" value="Cadastrar telefone">
+    <form method="post" th:action="@{/admin/action/telefone-cadastrar}">
+        <input class="btn btn-primary" type="text" name="numero" id="numero"/>
+        <input class="btn btn-primary" type="submit" value="Cadastrar telefone">
     </form>
 
 </body>
