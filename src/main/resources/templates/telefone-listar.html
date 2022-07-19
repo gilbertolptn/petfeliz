@@ -8,11 +8,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Pet Feliz</h1>
+<div class="navbar navbar-inverse navbar-fixed-top" >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/admin">Pet Feliz</a>
+
+    <a class="nav-link" href="/admin/telefone-cadastrar">Cadastrar Telefone</a>
+    <a class="nav-link" href="/admin/telefone-listar">Listar Telefones</a>
+  </nav>
+</div>
 <h2>Administração do Sistema</h2>
 <h3>Listagem de telefones</h3>
-
-<a href="/admin">Voltar</a><br><br><br>
 
 <ul th:each="telefone: ${telefones}">
   <li th:text="${telefone}"></li>
