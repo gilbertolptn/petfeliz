@@ -8,8 +8,9 @@ public class Telefone {
 
     Telefone() {} // Construtor com visibilidade "default" para o Hibernate conseguir usar essa entidade
 
-    public Telefone(Long id, String numero) {
+    public Telefone(Long id, String ddd, String numero) {
         this.id = id;
+        this.ddd = ddd;
         this.numero = numero;
     }
 
@@ -22,11 +23,18 @@ public class Telefone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "ddd")
+    private String ddd;
+
     @Column(name = "numero")
     private String numero;
 
     public Long getId() {
         return id;
+    }
+
+    public String getDdd() {
+        return ddd;
     }
 
     public String getNumero() {

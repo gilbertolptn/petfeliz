@@ -33,4 +33,8 @@ public class TelefoneService {
 
         return telefones;
     }
+
+    public void criarTelefone(Telefone telefone) {
+        telefoneRepository.save(telefone);
+    }
 }
