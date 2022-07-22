@@ -18,6 +18,11 @@ public class InformacoesRepository {
         return jdbcTemplate.queryForList("select numero from tb_telefones", String.class);
     }
 
+    public List<String> listarTelefonesPorDDD(String ddd){
+        return jdbcTemplate.queryForList("select numero from tb_telefones Where ddd = ?",
+                String.class,
+                ddd);
+    }
     /*
     public List<String> listarTelefonesComJDBC(){
         List<String> telefones = new LinkedList<>();
