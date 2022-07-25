@@ -8,10 +8,12 @@ public class Raca {
 
     Raca() {}
 
-    public Raca(Long id, String descricao, TipoAnimal tipo) {
+    //TODO usar builder
+    public Raca(Long id, String descricao, TipoAnimal tipo, Cuidador cuidador) {
         this.id = id;
         this.descricao = descricao;
         this.tipo = tipo;
+        this.cuidador = cuidador;
     }
 
     @Id
@@ -26,6 +28,10 @@ public class Raca {
     @Enumerated(EnumType.STRING)
     private TipoAnimal tipo;
 
+    @ManyToOne
+    @JoinColumn(name = "cuidador_id")
+    private Cuidador cuidador;
+
     public Long getId() {
         return id;
     }
@@ -36,5 +42,9 @@ public class Raca {
 
     public TipoAnimal getTipo() {
         return tipo;
+    }
+
+    public Cuidador getCuidador() {
+        return cuidador;
     }
 }

@@ -1,6 +1,7 @@
 package br.com.tt.petfeliz.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cuidador")
@@ -9,7 +10,7 @@ public class Cuidador {
     Cuidador() {}
 
     //TODO Usar Builder aqui
-    public Cuidador(Long id, String nome, String cpf, String telefone, String cidade, Estado estado, TipoCuidador nivel) {
+    public Cuidador(Long id, String nome, String cpf, String telefone, String cidade, Estado estado, TipoCuidador nivel, List<Raca> racasQueCuida) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -17,6 +18,7 @@ public class Cuidador {
         this.cidade = cidade;
         this.estado = estado;
         this.nivel = nivel;
+        this.racasQueCuida = racasQueCuida;
     }
 
     @Id
@@ -41,6 +43,9 @@ public class Cuidador {
 
     @Column(name = "nivel")
     private TipoCuidador nivel;
+
+    @OneToMany(mappedBy = "cuidador", cascade = {CascadeType.ALL})
+    private List<Raca> racasQueCuida;
 
     public Long getId() {
         return id;
@@ -68,5 +73,13 @@ public class Cuidador {
 
     public TipoCuidador getNivel() {
         return nivel;
+    }
+
+    public void adicionarRaca(Raca novaRaca) {
+        racasQueCuida.add(novaRaca);
+    }
+
+    public List<Raca> getRacasQueCuida() {
+        return racasQueCuida;
     }
 }
