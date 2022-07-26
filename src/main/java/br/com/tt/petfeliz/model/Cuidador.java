@@ -42,6 +42,7 @@ public class Cuidador {
     private Estado estado;
 
     @Column(name = "nivel")
+    @Enumerated(EnumType.STRING)
     private TipoCuidador nivel;
 
     @OneToMany(mappedBy = "cuidador", cascade = {CascadeType.ALL})
