@@ -25,6 +25,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
 
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
+
 	/*
 	Escopos do Gradle:
 	- implementation: em testes, em compilação e em execução - será empacotado para produção
